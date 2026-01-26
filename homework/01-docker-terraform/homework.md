@@ -18,6 +18,24 @@ db:5432
 Prepare the data
 
 
+!wget https://github.com/DataTalksClub/nyc-tlc-data/releases/download/misc/taxi_zone_lookup.csv
+
+import pandas as pd
+
+df_zones = pd.read_csv ('taxi_zone_lookup.csv')
+
+df_zones.to_sql(name='zones', con=engine, if_exists='replace')
+
+df_zones.head()
+
+
+!wget https://d37ci6vzurychx.cloudfront.net/trip-data/green_tripdata_2025-11.parquet
+
+df_zones = pd.read_parquet ('green_tripdata_2025-11.parquet')
+
+df_zones.to_sql(name='green_taxi_trips', con=engine, if_exists='replace')
+
+df.head()
 Question 3. Counting short trips
 
 SELECT COUNT(*) AS trips_leq_1_mile
