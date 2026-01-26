@@ -12,6 +12,8 @@ docker run -it \
     python:3.13
 
 
+bash here
+
 pip -V 
 pip 25.3 from /usr/local/lib/python3.13/site-packages/pip (python 3.13)
 
