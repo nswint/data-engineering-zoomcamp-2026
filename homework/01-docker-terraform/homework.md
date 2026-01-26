@@ -1,4 +1,4 @@
-Cohort data-engineering-zoomcamp-2026
+data-engineering-zoomcamp-2026
 
 Homework 1: Docker, SQL and Terraform for Data Engineering Zoomcamp 2026
 
