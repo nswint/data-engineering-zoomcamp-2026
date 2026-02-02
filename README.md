@@ -137,17 +137,59 @@ Homework 2: Workflow Orchestration
 Question 1. Within the execution for Yellow Taxi data for the year 2020 and month 12: what is the uncompressed file size (i.e. the output file yellow_tripdata_2020-12.csv of the extract task)?
 
 
+ls -lah yellow_tripdata_2020-12.csv
+-rw-r--r--  1 nswint  staff   128M Feb  1 20:02 yellow_tripdata_2020-12.csv
+
 
 Question 2. What is the rendered value of the variable file when the inputs taxi is set to green, year is set to 2020, and month is set to 04 during execution? 
 
+{{inputs.taxi}}_tripdata_{{inputs.year}}-{{inputs.month}}.csv
 
 Question 3. How many rows are there for the Yellow Taxi data for all CSV files in the year 2020? 
+
+wc -l yellow_tripdata_2020*                                                         
+ 6405009 yellow_tripdata_2020-01.csv
+ 6299355 yellow_tripdata_2020-02.csv
+ 3007293 yellow_tripdata_2020-03.csv
+  237994 yellow_tripdata_2020-04.csv
+  348372 yellow_tripdata_2020-05.csv
+  549761 yellow_tripdata_2020-06.csv
+  800413 yellow_tripdata_2020-07.csv
+ 1007285 yellow_tripdata_2020-08.csv
+ 1341013 yellow_tripdata_2020-09.csv
+ 1681132 yellow_tripdata_2020-10.csv
+ 1508986 yellow_tripdata_2020-11.csv
+ 1461898 yellow_tripdata_2020-12.csv
+ 24648511 total
+
 
 
 Question 4. How many rows are there for the Green Taxi data for all CSV files in the year 2020?
 
+wc -l green_tripdata_2020*                                                         
+  447771 green_tripdata_2020-01.csv
+  398633 green_tripdata_2020-02.csv
+  223407 green_tripdata_2020-03.csv
+   35613 green_tripdata_2020-04.csv
+   57361 green_tripdata_2020-05.csv
+   63110 green_tripdata_2020-06.csv
+   72258 green_tripdata_2020-07.csv
+   81064 green_tripdata_2020-08.csv
+   87988 green_tripdata_2020-09.csv
+   95121 green_tripdata_2020-10.csv
+   88606 green_tripdata_2020-11.csv
+   83131 green_tripdata_2020-12.csv
+ 1734063 total
+
+
 Question 5. How many rows are there for the Yellow Taxi data for the March 2021 CSV file? 
+
+wc -l yellow_tripdata_2021-03.csv 
+ 1925153 yellow_tripdata_2021-03.csv
+
 
 Question 6. How would you configure the timezone to New York in a Schedule trigger? 
 
+timezone: America/New_York
 
+https://kestra.io/docs/workflow-components/triggers/schedule-trigger#examples
